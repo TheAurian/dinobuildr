@@ -60,7 +60,7 @@ elif [[ "$os_version" -eq "10" && "$major_version" -eq "15" ]]; then
     HASH="a5fd5700616730f3db1af48bf380156a1897197108be359a3c7769b7a359d7c9" # change only after thorough testing
 
     if [ "$(echo "$WALLPAPER_SH" | shasum -a 256 | awk '{print $1}')" == $HASH ]; then #  if the hashes match then proceed
-        echo "We're on Catalina so we're going to use the Mojave way to set the wallpaper."
+        echo "We're on Catalina so we're going to use the Catalina way to set the wallpaper."
         echo "Running as daemon user"
         /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 
