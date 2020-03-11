@@ -76,7 +76,7 @@ def script_exec(script):
 # stderr to the python console. the return code of the script execution can be
 # found in the pipes object (pipes.returncode).
 def script_exec_hb():
-    echo "I guess we're rrunning this as root"
+    print "I guess we're rrunning this as root"
     pipes = subprocess.Popen(["sudo -H -u mozilla /bin/bash", "-c", "curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh"],
                              stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
     for line in iter(pipes.stdout.readline, b''):
