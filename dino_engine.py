@@ -77,7 +77,8 @@ def script_exec(script):
 # found in the pipes object (pipes.returncode).
 def script_exec_hb():
     print "I guess we're rrunning this as root"
-    pipes = subprocess.Popen(["sudo -H -u mozilla /bin/bash", "-c", "curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh"],
+    pipes = subprocess.Popen(["sudo", "-H", "-u",
+                             "mozilla", "/bin/bash", "-c", "$curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh"],
                              stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
     for line in iter(pipes.stdout.readline, b''):
         print "*** " + line.rstrip()
