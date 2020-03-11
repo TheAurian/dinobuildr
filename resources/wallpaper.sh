@@ -65,7 +65,7 @@ elif [[ "$os_version" -eq "10" && "$major_version" -eq "15" ]]; then
 
         #set the usr/local/bin folder as this does not exist on stock macos installations
         /bin/bash -c "mkdir -p -m 775 /usr/local/bin"
-        /usr/local/bin -c "wallpaper get --help"
+        /bin/bash -c "wallpaper get --help"
 
         #/bin/bash -c "$WALLPAPER_SH" -s "/Users/Shared/$WALLPAPER_FILENAME"
     fi       
