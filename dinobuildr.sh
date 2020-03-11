@@ -14,10 +14,10 @@
 # Accepts optional parameters that specifies the branch and manifest
 # to build against.
 
-branch=master
+branch=hbwp
 manifest=production_manifest.json
 repo=dinobuildr
-org=mozilla
+org=TheAurian
 dino_engine=dino_engine.py
 
 while :; do
