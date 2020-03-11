@@ -315,7 +315,7 @@ def main():
             dl_url = raw_url + item['url']
             print "Downloading:", item['item']
             downloader(dl_url, local_path)
-            hash_file(local_path, item['hash'])
+            # hash_file(local_path, item['hash'])
             print "Executing:", item['item']
             perms = os.stat(local_path)
             os.chmod(local_path, perms.st_mode | stat.S_IEXEC)
