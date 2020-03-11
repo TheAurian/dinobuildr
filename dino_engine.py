@@ -72,6 +72,18 @@ def script_exec(script):
         exit(1)
 
 
+# the script executer executes any .sh file using bash and pipes stdout and
+# stderr to the python console. the return code of the script execution can be
+# found in the pipes object (pipes.returncode).
+def script_exec_hb():
+    pipes = subprocess.Popen(["sudo -H -u mozilla /bin/bash", "-c", "curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh"],
+                             stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+    for line in iter(pipes.stdout.readline, b''):
+        print "*** " + line.rstrip()
+    pipes.communicate()
+    if pipes.returncode == 1:
+        exit(1)
+
 # the dmg installer is by far the most complicated function, because DMGs are
 # more complicated than a .app inside we take the appropriate action. we also
 # have the option to specify an optional command. since sometimes we must
@@ -268,6 +280,10 @@ def main():
 
     print "\n***** DINOBUILDR IS BUILDING. RAWR. *****\n"
     print "Building against the [%s] branch and the %s manifest\n" % (branch, manifest)
+
+    #instaling homebrew
+    script_exec_hb()
+
     # we read the manifest file and examine each object in it. if the object is a
     # .pkg file, then we assemble the download url of the pointer, read the pointer
     # and request the file from LFS. if the file we get has a hash that matches
