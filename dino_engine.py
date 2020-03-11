@@ -197,7 +197,7 @@ def main():
     local_dir = "/var/tmp/dinobuildr"
     default_org = "TheAurian"
     default_repo = "dinobuildr"
-    default_branch = "hbwp"
+    default_branch = "hotfix/hbwp"
     default_manifest = "production_manifest.json"
 
     # this section parses argument(s) passed to this script

@@ -14,7 +14,7 @@
 # Accepts optional parameters that specifies the branch and manifest
 # to build against.
 
-branch=hbwp
+branch=hotfix/hbwp
 manifest=production_manifest.json
 repo=dinobuildr
 org=TheAurian
