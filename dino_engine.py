@@ -195,9 +195,9 @@ def main():
     # default_branch - the default branch to build against if no --branch argument is specified
     # testing
     local_dir = "/var/tmp/dinobuildr"
-    default_org = "mozilla"
+    default_org = "TheAurian"
     default_repo = "dinobuildr"
-    default_branch = "master"
+    default_branch = "hbwp"
     default_manifest = "production_manifest.json"
 
     # this section parses argument(s) passed to this script
