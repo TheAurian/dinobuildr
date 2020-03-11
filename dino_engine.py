@@ -79,6 +79,7 @@ def script_exec_hb():
     pipes = subprocess.Popen(["sudo -H -u mozilla /bin/bash", "-c", "curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh"],
                              stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
     for line in iter(pipes.stdout.readline, b''):
+        echo "I guess we're rrunning this as root"
         print "*** " + line.rstrip()
     pipes.communicate()
     if pipes.returncode == 1:
