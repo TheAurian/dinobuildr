@@ -65,8 +65,12 @@ elif [[ "$os_version" -eq "10" && "$major_version" -eq "15" ]]; then
         echo "Running as markeldwv daemon user"
 
         #set the usr/local/bin folder as this does not exist on stock macos installations
+        echo "Downloading wallpaper"
         /bin/bash -c "mkdir -p -m 775 /usr/local/bin"
         /bin/basg -c "$WALLPAPER_DL"
+
+        echo "moving wallpaper"
+        /bin/bash -c "mv wallpaper /usr/local/bin"
         #/bin/bash -c "wallpaper get --help"
 
         #/bin/bash -c "$WALLPAPER_SH" -s "/Users/Shared/$WALLPAPER_FILENAME"
