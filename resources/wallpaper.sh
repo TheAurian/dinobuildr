@@ -56,7 +56,8 @@ elif [[ "$os_version" -eq "10" && "$major_version" -eq "14" ]]; then
     fi
 
 elif [[ "$os_version" -eq "10" && "$major_version" -eq "15" ]]; then
-    WALLPAPER_SH=$(curl -fsSL https://raw.githubusercontent.com/mozilla/macos-desktop/810e38873c9c4d63b9d4b35cc81c008c88eac1ca/set-desktop-catalina.sh)
+    #WALLPAPER_SH=$(curl -fsSL https://raw.githubusercontent.com/mozilla/macos-desktop/810e38873c9c4d63b9d4b35cc81c008c88eac1ca/set-desktop-catalina.sh)
+    WALLPAPER_DL=$(curl -O https://github.com/sindresorhus/macos-wallpaper/releases/download/v2.0.0/wallpaper.zip)
     HASH="a5fd5700616730f3db1af48bf380156a1897197108be359a3c7769b7a359d7c9" # change only after thorough testing
 
     if [ "$(echo "$WALLPAPER_SH" | shasum -a 256 | awk '{print $1}')" == $HASH ]; then #  if the hashes match then proceed
@@ -65,7 +66,8 @@ elif [[ "$os_version" -eq "10" && "$major_version" -eq "15" ]]; then
 
         #set the usr/local/bin folder as this does not exist on stock macos installations
         /bin/bash -c "mkdir -p -m 775 /usr/local/bin"
-        /bin/bash -c "wallpaper get --help"
+        /bin/basg -c "$WALLPAPER_DL"
+        #/bin/bash -c "wallpaper get --help"
 
         #/bin/bash -c "$WALLPAPER_SH" -s "/Users/Shared/$WALLPAPER_FILENAME"
     fi       

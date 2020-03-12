@@ -76,14 +76,7 @@ def script_exec(script):
 # stderr to the python console. the return code of the script execution can be
 # found in the pipes object (pipes.returncode).
 def script_exec_hb():
-    print "I guess we're rrunning this as root"
-    pipes = subprocess.Popen(["sudo", "-H", "-u",
-                             "mozilla", "/bin/bash", "-c", "$curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh"],
-                             stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
-    for line in iter(pipes.stdout.readline, b''):
-        print "*** " + line.rstrip()
-    pipes.communicate()
-    if pipes.returncode == 1:
+    if False:
         exit(1)
 
 # the dmg installer is by far the most complicated function, because DMGs are
