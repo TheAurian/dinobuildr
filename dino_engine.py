@@ -276,8 +276,6 @@ def main():
     print "\n***** DINOBUILDR IS BUILDING. RAWR. *****\n"
     print "Building against the [%s] branch and the %s manifest\n" % (branch, manifest)
 
-    #instaling homebrew
-    script_exec_hb()
 
     # we read the manifest file and examine each object in it. if the object is a
     # .pkg file, then we assemble the download url of the pointer, read the pointer
